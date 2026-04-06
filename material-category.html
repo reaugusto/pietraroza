@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mármores — Coleção Completa | Pietra Roza</title>
+  <meta name="description" content="Explore nossa coleção completa de mármores naturais de origem certificada — Arabescato, Calacatta, Carrara e muito mais.">
+  <link rel="icon" href="assets/img/site/fav-icon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="custom-cursor"></div>
+<div id="page-curtain"></div>
+
+<!-- ─── NAVEGAÇÃO ─── -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo" data-setting="site_name">Pietra Roza</a>
+  <ul class="nav-links">
+    <li><a href="material-category.html" class="active">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="mobile-menu-header"><span class="mobile-menu-logo" data-setting="site_name">Pietra Roza</span></div>
+  <ul class="mobile-menu-links">
+    <li><a href="material-category.html" class="active">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-accent"></div>
+  <div class="mobile-menu-footer">
+    <p>São Paulo · Uberaba<br>Brasil</p>
+    <a href="contato.html" class="mobile-menu-cta">Solicitar Orçamento</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ─── HEADER DA CATEGORIA ─── -->
+  <div class="cat-header">
+    <p class="section-label reveal">Pedras Naturais — Curadoria de Origem</p>
+    <h1 class="section-title reveal" data-delay="0.05">Mármores</h1>
+
+    <!-- Filtros -->
+    <div class="cat-filters reveal" data-delay="0.15">
+      <button class="cat-filter active" data-filter="todos">Todos</button>
+      <span class="filter-dot">·</span>
+      <button class="cat-filter" data-filter="brancos">Brancos</button>
+      <span class="filter-dot">·</span>
+      <button class="cat-filter" data-filter="exoticos">Exóticos</button>
+      <span class="filter-dot">·</span>
+      <button class="cat-filter" data-filter="classicos">Clássicos</button>
+      <span class="filter-dot">·</span>
+      <button class="cat-filter" data-filter="coloridos">Coloridos</button>
+    </div>
+  </div>
+
+  <!-- ─── GRID DE MÁRMORES ─── -->
+  <section style="padding: 0 var(--gutter) var(--section-v);">
+    <div class="products-grid">
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="classicos"
+         data-name="Arabescato" data-origin="Itália" data-img="assets/img/marmores/MARMORE-ARABESCATO.jpg"
+         data-desc="Mármore italiano com veios cinza e dourados sobre fundo branco. Ideal para bancadas de cozinha, revestimentos de banheiros e peças de mobiliário exclusivas."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-ARABESCATO.jpg" alt="Mármore Arabescato">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Arabescato</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="exoticos"
+         data-name="Black and Gold" data-origin="Paquistão" data-img="assets/img/marmores/MARMORE-BLACK-AND-GOLD.jpg"
+         data-desc="Mármore negro com veios dourados intensos. Perfeito para lavabos, lareiras, tampos de mesa e detalhes que demandam sofisticação máxima."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BLACK-AND-GOLD.jpg" alt="Mármore Black and Gold">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Black &amp; Gold</p>
+          <p class="product-card-origin">Paquistão</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="exoticos"
+         data-name="Blue Sky" data-origin="Brasil" data-img="assets/img/marmores/MARMORE-BLUE-SKY.jpg"
+         data-desc="Mármore exótico brasileiro com tonalidades azuladas. Indicado para painéis de destaque, bancadas e revestimentos de áreas sociais."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BLUE-SKY.jpg" alt="Mármore Blue Sky">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Blue Sky</p>
+          <p class="product-card-origin">Brasil</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="classicos"
+         data-name="Botticino Clássico Extra" data-origin="Itália" data-img="assets/img/marmores/MARMORE-BOTTICINO-CLASSICO-EXTRA.jpg"
+         data-desc="Mármore clássico italiano de tom bege uniforme. Ideal para pisos de grande formato, halls de entrada e revestimentos de fachadas."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BOTTICINO-CLASSICO-EXTRA.jpg" alt="Mármore Botticino Clássico Extra">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Botticino Clássico Extra</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="classicos"
+         data-name="Botticino Clássico" data-origin="Itália" data-img="assets/img/marmores/MARMORE-BOTTICINO-CLASSICO.jpg"
+         data-desc="Versão standard do clássico Botticino italiano. Excelente para pisos, escadas e revestimentos internos com acabamento elegante."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BOTTICINO-CLASSICO.jpg" alt="Mármore Botticino Clássico">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Botticino Clássico</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="brancos"
+         data-name="Branco Ariston" data-origin="Grécia" data-img="assets/img/marmores/MARMORE-BRANCO-ARISTON.jpg"
+         data-desc="Mármore branco puro de origem grega. Recomendado para bancadas de banheiro, revestimentos claros e projetos minimalistas."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BRANCO-ARISTON.jpg" alt="Mármore Branco Ariston">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Branco Ariston</p>
+          <p class="product-card-origin">Grécia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="brancos"
+         data-name="Branco Carrarinha" data-origin="Brasil" data-img="assets/img/marmores/MARMORE-BRANCO-CARRARINHA.jpg"
+         data-desc="Mármore branco nacional com leve veio acinzentado. Ótimo para pisos, bancadas e revestimentos de custo acessível."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BRANCO-CARRARINHA.jpg" alt="Mármore Branco Carrarinha">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Branco Carrarinha</p>
+          <p class="product-card-origin">Brasil</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="brancos"
+         data-name="Branco Champagne" data-origin="Brasil" data-img="assets/img/marmores/MARMORE-BRANCO-CHAMPAGNE.jpg"
+         data-desc="Mármore branco com suave tonalidade champanhe. Ideal para ambientes sofisticados, pisos e revestimentos de paredes."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BRANCO-CHAMPAGNE.jpg" alt="Mármore Branco Champagne">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Branco Champagne</p>
+          <p class="product-card-origin">Brasil</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="brancos"
+         data-name="Branco Sivec Extra" data-origin="Macedônia" data-img="assets/img/marmores/MARMORE-BRANCO-SIVEC-EXTRA.jpg"
+         data-desc="Um dos mármores mais brancos do mundo, totalmente puro. Perfeito para esculturas, bancadas de alto padrão e projetos de luxo."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BRANCO-SIVEC-EXTRA.jpg" alt="Mármore Branco Sivec Extra">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Branco Sivec Extra</p>
+          <p class="product-card-origin">Macedônia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="brancos"
+         data-name="Branco Thassos" data-origin="Grécia" data-img="assets/img/marmores/MARMORE-BRANCO-THASSOS.jpg"
+         data-desc="Mármore branco cristalino da ilha de Thassos. Ideal para banheiros luxuosos, pisos e mosaicos decorativos."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BRANCO-THASSOS.jpg" alt="Mármore Branco Thassos">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Branco Thassos</p>
+          <p class="product-card-origin">Grécia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="exoticos"
+         data-name="Breccia Oniciata" data-origin="Itália" data-img="assets/img/marmores/MARMORE-BRECCi-ONICiTA.jpg"
+         data-desc="Mármore exótico italiano com padrão de fragmentos minerais. Excelente para painéis decorativos, mesas e peças statement."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BRECCi-ONICiTA.jpg" alt="Mármore Breccia Oniciata">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Breccia Oniciata</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="exoticos"
+         data-name="Bronze Armani" data-origin="Itália" data-img="assets/img/marmores/MARMORE-BRONZE-ARMANI.jpg"
+         data-desc="Mármore italiano de tonalidade bronze sofisticada. Perfeito para lareiras, painéis de TV e ambientes com iluminação quente."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-BRONZE-ARMANI.jpg" alt="Mármore Bronze Armani">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Bronze Armani</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="classicos"
+         data-name="Calacatta Gold Extra" data-origin="Itália" data-img="assets/img/marmores/MARMORE-CALACATTA-GOLD-EXTRA.jpg"
+         data-desc="O Calacatta Gold Extra é um dos mármores mais nobres do mundo. Veios dourados intensos sobre fundo branco puro. Ideal para cozinhas e bancadas de alto padrão."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-CALACATTA-GOLD-EXTRA.jpg" alt="Mármore Calacatta Gold Extra">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Calacatta Gold Extra</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="classicos"
+         data-name="Calacatta Machia Oro" data-origin="Itália" data-img="assets/img/marmores/MARMORE-CALACATTA-MACHi-ORO.jpg"
+         data-desc="Variação do Calacatta com manchas douradas expressivas. Recomendado para ilhas de cozinha, painéis e revestimentos de impacto."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-CALACATTA-MACHi-ORO.jpg" alt="Mármore Calacatta Machia Oro">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Calacatta Machia Oro</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="classicos"
+         data-name="Calacatta Oro" data-origin="Itália" data-img="assets/img/marmores/MARMORE-CALACATTA-ORO.jpg"
+         data-desc="Calacatta com veios dourados elegantes. Pedra nobre para ambientes requintados, bancadas e projetos de design de interiores."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-CALACATTA-ORO.jpg" alt="Mármore Calacatta Oro">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Calacatta Oro</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="classicos"
+         data-name="Carrara Gioia" data-origin="Itália" data-img="assets/img/marmores/MARMORE-CARRARA-GIOi.jpg"
+         data-desc="Versão premium do clássico Carrara com veios mais definidos. Indicado para pisos, banheiros e ambientes clássicos."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-CARRARA-GIOi.jpg" alt="Mármore Carrara Gioia">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Carrara Gioia</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="classicos"
+         data-name="Crema Marfil" data-origin="Espanha" data-img="assets/img/marmores/MARMORE-CREMA-MARFIL.jpg"
+         data-desc="Mármore bege espanhol de grande uniformidade. Excelente para pisos de áreas amplas, escadas e revestimentos residenciais."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-CREMA-MARFIL.jpg" alt="Mármore Crema Marfil">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Crema Marfil</p>
+          <p class="product-card-origin">Espanha</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="classicos"
+         data-name="Crema Marfil Standard" data-origin="Espanha" data-img="assets/img/marmores/MARMORE-CREMA-MARFIL-STANDARD.jpg"
+         data-desc="Versão standard do Crema Marfil, com variação de veios. Indicado para pisos residenciais e comerciais."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-CREMA-MARFIL-STANDARD.jpg" alt="Mármore Crema Marfil Standard">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Crema Marfil Standard</p>
+          <p class="product-card-origin">Espanha</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="classicos"
+         data-name="Crema Valencia" data-origin="Espanha" data-img="assets/img/marmores/MARMORE-CREMA-VALENCi.jpg"
+         data-desc="Mármore bege claro com nuances sutis. Ideal para projetos contemporâneos, pisos e revestimentos de ambientes claros."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-CREMA-VALENCi.jpg" alt="Mármore Crema Valencia">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Crema Valencia</p>
+          <p class="product-card-origin">Espanha</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="coloridos"
+         data-name="Forest Brown" data-origin="Índia" data-img="assets/img/marmores/MARMORE-FOREST-BROWN.jpg"
+         data-desc="Mármore marrom com veios texturizados. Perfeito para lareiras, painéis e mobiliário em ambientes com tons quentes."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-FOREST-BROWN.jpg" alt="Mármore Forest Brown">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Forest Brown</p>
+          <p class="product-card-origin">Índia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="coloridos"
+         data-name="Forest Green" data-origin="Índia" data-img="assets/img/marmores/MARMORE-FOREST-GREEN.jpg"
+         data-desc="Mármore verde intenso de origem indiana. Ideal para bancadas de lavabo, detalhes em mobiliário e painéis decorativos."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-FOREST-GREEN.jpg" alt="Mármore Forest Green">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Forest Green</p>
+          <p class="product-card-origin">Índia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="exoticos"
+         data-name="Golden Spider" data-origin="Grécia" data-img="assets/img/marmores/MARMORE-GOLDEN-SPIDER.jpg"
+         data-desc="Mármore bege com veios dourados em teia. Excelente para pisos, revestimentos de banheiros e projetos de alto padrão."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-GOLDEN-SPIDER.jpg" alt="Mármore Golden Spider">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Golden Spider</p>
+          <p class="product-card-origin">Grécia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="exoticos"
+         data-name="Green Spider" data-origin="Grécia" data-img="assets/img/marmores/MARMORE-GREEN-SPIDER.jpg"
+         data-desc="Mármore verde com veios brancos em padrão teia de aranha. Ideal para lavabos, detalhes decorativos e mobiliário."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-GREEN-SPIDER.jpg" alt="Mármore Green Spider">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Green Spider</p>
+          <p class="product-card-origin">Grécia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="exoticos"
+         data-name="Gris Armani" data-origin="Itália" data-img="assets/img/marmores/MARMORE-GRIS-ARMANI.jpg"
+         data-desc="Mármore cinza sofisticado de tom uniforme. Perfeito para projetos contemporâneos, pisos e painéis minimalistas."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-GRIS-ARMANI.jpg" alt="Mármore Gris Armani">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Gris Armani</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="coloridos"
+         data-name="Marrom Imperador Dark" data-origin="Espanha" data-img="assets/img/marmores/MARMORE-MARROM-IMPERADOR-DARK.jpg"
+         data-desc="Mármore marrom escuro espanhol com textura profunda. Ideal para pisos, lareiras e ambientes com iluminação indireta."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-MARROM-IMPERADOR-DARK.jpg" alt="Mármore Marrom Imperador Dark">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Marrom Imperador Dark</p>
+          <p class="product-card-origin">Espanha</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="coloridos"
+         data-name="Marrom Imperador Light" data-origin="Espanha" data-img="assets/img/marmores/MARMORE-MARROM-IMPERADOR-LIGHT.jpg"
+         data-desc="Variação clara do Marrom Imperador. Ótimo para pisos de grande formato e revestimentos internos."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-MARROM-IMPERADOR-LIGHT.jpg" alt="Mármore Marrom Imperador Light">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Marrom Imperador Light</p>
+          <p class="product-card-origin">Espanha</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="exoticos"
+         data-name="Nero Marquina" data-origin="Espanha" data-img="assets/img/marmores/MARMORE-NERO-MARQUINA.jpg"
+         data-desc="Mármore negro com veios brancos marcantes. Atemporal para bancadas, pisos e projetos com contraste dramático."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-NERO-MARQUINA.jpg" alt="Mármore Nero Marquina">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Nero Marquina</p>
+          <p class="product-card-origin">Espanha</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="exoticos"
+         data-name="Nero Portoro" data-origin="Itália" data-img="assets/img/marmores/MARMORE-NERO-PORTORO.jpg"
+         data-desc="Mármore negro com veios dourados. Uma das pedras mais nobres da Itália. Indicado para lavabos de luxo e ambientes exclusivos."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-NERO-PORTORO.jpg" alt="Mármore Nero Portoro">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Nero Portoro</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="brancos"
+         data-name="Perlino Bianco" data-origin="Itália" data-img="assets/img/marmores/MARMORE-PERLINO-BiNCO.jpg"
+         data-desc="Mármore branco perolado com suaves veios. Indicado para pisos, revestimentos de banheiros e ambientes iluminados."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-PERLINO-BiNCO.jpg" alt="Mármore Perlino Bianco">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Perlino Bianco</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="coloridos"
+         data-name="Rosso Alicante" data-origin="Espanha" data-img="assets/img/marmores/MARMORE-ROSSO-ALICANTE.jpg"
+         data-desc="Mármore vermelho espanhol vibrante. Excelente para detalhes em pisos, faixas decorativas e ambientes clássicos."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-ROSSO-ALICANTE.jpg" alt="Mármore Rosso Alicante">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Rosso Alicante</p>
+          <p class="product-card-origin">Espanha</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="coloridos"
+         data-name="Rosso Verona" data-origin="Itália" data-img="assets/img/marmores/MARMORE-ROSSO-VERONA.jpg"
+         data-desc="Mármore italiano rosa-avermelhado. Tradicional em projetos clássicos, pisos históricos e revestimentos de fachadas."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-ROSSO-VERONA.jpg" alt="Mármore Rosso Verona">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Rosso Verona</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="brancos"
+         data-name="Statuarieto" data-origin="Itália" data-img="assets/img/marmores/MARMORE-STATuRIETO.jpg"
+         data-desc="Variação do Statuario com veios delicados. Ideal para esculturas, bancadas e projetos arquitetônicos de alto padrão."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-STATuRIETO.jpg" alt="Mármore Statuarieto">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Statuarieto</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.2" data-category="coloridos"
+         data-name="Verde Alpi" data-origin="Itália" data-img="assets/img/marmores/MARMORE-VERDE-ALPI.jpg"
+         data-desc="Mármore verde escuro dos Alpes italianos. Perfeito para bancadas, lavabos e ambientes que pedem sofisticação natural."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-VERDE-ALPI.jpg" alt="Mármore Verde Alpi">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Verde Alpi</p>
+          <p class="product-card-origin">Itália</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0" data-category="coloridos"
+         data-name="Verde Guatemala" data-origin="Índia" data-img="assets/img/marmores/MARMORE-VERDE-GuTEMALA.jpg"
+         data-desc="Mármore verde intenso com veios brancos. Ideal para painéis, bancadas e detalhes de mobiliário com personalidade."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-VERDE-GuTEMALA.jpg" alt="Mármore Verde Guatemala">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">Verde Guatemala</p>
+          <p class="product-card-origin">Índia</p>
+        </div>
+      </a>
+
+      <a href="javascript:void(0)" class="product-card reveal" data-delay="0.1" data-category="brancos"
+         data-name="White Crystal" data-origin="Brasil" data-img="assets/img/marmores/MARMORE-WHITE-CRYSTAL.jpg"
+         data-desc="Mármore branco cristalino brasileiro. Excelente para pisos, revestimentos internos e projetos que pedem luminosidade."
+         onclick="openModal(this)">
+        <div class="product-card-img reveal-img">
+          <img src="assets/img/marmores/MARMORE-WHITE-CRYSTAL.jpg" alt="Mármore White Crystal">
+        </div>
+        <div class="product-card-info">
+          <p class="product-card-name">White Crystal</p>
+          <p class="product-card-origin">Brasil</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-title">Precisa de<br>assessoria?</h2>
+    <a href="contato.html" class="cta-link">Fale conosco →</a>
+  </section>
+
+</main>
+
+<!-- ─── MODAL DE DETALHE ─── -->
+<div class="stone-modal" id="stoneModal">
+  <div class="stone-modal-overlay" onclick="closeModal()"></div>
+  <div class="stone-modal-content">
+    <button class="stone-modal-close" onclick="closeModal()">✕</button>
+    <div class="stone-modal-img">
+      <img id="modalImg" src="" alt="">
+    </div>
+    <div class="stone-modal-info">
+      <p class="stone-modal-label">Mármore Natural</p>
+      <h2 class="stone-modal-name" id="modalName"></h2>
+      <p class="stone-modal-origin" id="modalOrigin"></p>
+      <p class="stone-modal-desc" id="modalDesc"></p>
+      <a href="contato.html" class="btn-terracota" style="margin-top: 32px;">Solicitar Orçamento</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo" data-setting="site_name">Pietra Roza</div>
+    <nav class="footer-nav">
+      <a href="material-category.html">Mármores</a>
+      <a href="portfolio.html">Projetos</a>
+      <a href="obras.html">Obras</a>
+      <a href="galeria.html">Coleções</a>
+      <a href="quem-somos.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Pietra Roza. Todos os direitos reservados.</p>
+    <p class="footer-copy">São Paulo · Uberaba, Brasil</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/settings.js"></script>
+<script type="module" src="assets/js/material-category-data.js"></script>
+</body>
+</html>
+
+
+

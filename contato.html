@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Pietra Roza</title>
+  <meta name="description" content="Entre em contato com a Pietra Roza para assessoria especializada em mármores e pedras naturais para seu projeto.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - var(--nav-h));
+    }
+    .contact-left {
+      background: var(--text-primary);
+      color: #fff;
+      padding: 100px var(--gutter) 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-left h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.95;
+      margin-bottom: 40px;
+    }
+    .contact-left h1 em {
+      color: var(--bg-card);
+      font-style: italic;
+    }
+    .contact-info-block {
+      margin-top: auto;
+    }
+    .contact-info-item {
+      margin-bottom: 32px;
+    }
+    .contact-info-item .label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+    .contact-info-item .value {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .contact-right {
+      background: var(--bg-light);
+      padding: 100px var(--gutter) 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contact-form-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--bg-card);
+      margin-bottom: 48px;
+    }
+    .form-group {
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(29,27,22,0.12);
+      padding-bottom: 12px;
+      position: relative;
+    }
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text-primary);
+      resize: none;
+      cursor: none;
+      appearance: none;
+    }
+    .form-group textarea { min-height: 80px; line-height: 1.6; }
+    .form-group::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0;
+      width: 0; height: 2px;
+      background: var(--bg-card);
+      transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .form-group:focus-within::after { width: 100%; }
+    .form-submit {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(29,27,22,0.15);
+      padding-bottom: 2px;
+      transition: color 0.3s;
+    }
+    .whatsapp-link:hover { color: var(--text-primary); }
+
+    @media (max-width: 900px) {
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .contact-left { min-height: 50vh; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="custom-cursor"></div>
+<div id="page-curtain"></div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo" data-setting="site_name">Pietra Roza</a>
+  <ul class="nav-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html" class="active">Contato</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="mobile-menu-header"><span class="mobile-menu-logo" data-setting="site_name">Pietra Roza</span></div>
+  <ul class="mobile-menu-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html" class="active">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-accent"></div>
+  <div class="mobile-menu-footer">
+    <p>São Paulo · Uberaba<br>Brasil</p>
+    <a href="contato.html" class="mobile-menu-cta">Solicitar Orçamento</a>
+  </div>
+</div>
+
+<main>
+  <div class="contact-wrapper">
+
+    <!-- ─── ESQUERDA: Info e contexto ─── -->
+    <div class="contact-left">
+      <div>
+        <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:24px;" class="intro-anim">Fale Conosco</p>
+        <h1 class="intro-anim">Vamos criar<br><em>algo</em><br>único?</h1>
+      </div>
+
+      <div class="contact-info-block intro-anim">
+        <div class="contact-info-item">
+          <p class="label">E-mail</p>
+          <a href="mailto:contato@pietraroza.com.br" class="value" style="color:#fff; text-decoration:none;" data-setting="contact_email">
+            contato@pietraroza.com.br
+          </a>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">WhatsApp</p>
+          <a href="https://wa.me/5521XXXXXXXXX" class="value" style="color:#fff; text-decoration:none;" data-setting="phone" data-wa="true">
+            +55 (21) XXXXX-XXXX
+          </a>
+        </div>
+        <div class="contact-info-item">
+          <p class="label">Showroom</p>
+          <p class="value" style="font-size:14px; font-weight:400; line-height:1.5; color:rgba(255,255,255,0.65);">
+            <span data-setting="address">Rio de Janeiro, RJ</span><br>
+            Seg — Sex, 9h às 18h
+          </p>
+        </div>
+
+        <div style="display:flex; gap:20px; margin-top: 40px;">
+          <a href="#" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.5); transition:color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Instagram →</a>
+          <a href="#" style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.5); transition:color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Pinterest →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── DIREITA: Formulário ─── -->
+    <div class="contact-right">
+      <p class="contact-form-title reveal">Envie uma mensagem</p>
+
+      <form id="contact-form" action="#" method="POST">
+
+        <div class="form-group reveal">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        </div>
+
+        <div class="form-group reveal d-1">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="form-group reveal d-2">
+          <label for="tipo">Tipo de projeto</label>
+          <select id="tipo" name="tipo">
+            <option value="">Selecione...</option>
+            <option>Residencial</option>
+            <option>Comercial</option>
+            <option>Hoteleiro</option>
+            <option>Gastronomia</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="form-group reveal d-3">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Descreva seu projeto e como podemos ajudar..." required></textarea>
+        </div>
+
+        <div class="form-submit reveal d-4">
+          <button type="submit" class="btn-terracota">Enviar Mensagem</button>
+          <a
+            href="https://wa.me/5511XXXXXXXXX?text=Olá! Vim pelo site e gostaria de saber mais sobre os mármores."
+            class="whatsapp-link"
+            target="_blank"
+            rel="noopener"
+            data-setting="phone"
+            data-wa="true"
+            data-keep-text="true"
+          >
+            Ou WhatsApp →
+          </a>
+        </div>
+        <div id="form-message" style="display:none; font-size: 13px; margin-top: 15px;"></div>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo" data-setting="site_name">Pietra Roza</div>
+    <nav class="footer-nav">
+      <a href="material-category.html">Mármores</a>
+      <a href="portfolio.html">Projetos</a>
+      <a href="obras.html">Obras</a>
+      <a href="galeria.html">Coleções</a>
+      <a href="quem-somos.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 <span data-setting="site_name">Pietra Roza</span>. <span data-setting="footer_text">Todos os direitos reservados.</span></p>
+    <p class="footer-copy" data-setting="address">Rio de Janeiro, Brasil</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/contato.js"></script>
+<script type="module" src="assets/js/settings.js"></script>
+</body>
+</html>
+

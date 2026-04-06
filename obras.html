@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obras — Portfólio de Projetos | Pietra Roza</title>
+  <meta name="description" content="Explore nossos projetos de arquitetura e design: ambientes reais que utilizam os mármores e pedras naturais da Pietra Roza.">
+  <link rel="icon" href="assets/img/site/fav-icon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── BARRA DE CATEGORIAS STICKY ─── */
+    .cat-nav {
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 50;
+      background: rgba(232, 226, 217, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(29,27,22,0.06);
+      padding: 0 var(--gutter);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .cat-nav::-webkit-scrollbar { display: none; }
+    .cat-nav-inner {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      min-width: max-content;
+    }
+    .cat-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 24px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: all 0.3s var(--ease-out);
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      cursor: none;
+    }
+    .cat-nav-item:hover {
+      color: var(--text-primary);
+      background: rgba(181, 113, 74, 0.04);
+    }
+    .cat-nav-item.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--bg-card);
+    }
+    .cat-nav-thumb {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cat-nav-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cat-nav-count {
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      color: var(--bg-card);
+      opacity: 0.7;
+      margin-left: -6px;
+    }
+
+    /* ─── SEÇÕES DE COLEÇÃO ─── */
+    .collection-section {
+      padding: var(--section-v) var(--gutter);
+    }
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+    .collection-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+    .collection-count {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    /* ─── HERO COMPACTO DE CATEGORIAS ─── */
+    .cat-hero-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+      margin-bottom: 0;
+    }
+    .cat-hero-card {
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      display: block;
+    }
+    .cat-hero-card-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+    }
+    .cat-hero-card-img img {
+      transition: transform 0.8s var(--ease-out);
+    }
+    .cat-hero-card:hover .cat-hero-card-img img {
+      transform: scale(1.08);
+    }
+    .cat-hero-card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(29,27,22,0.55) 0%, transparent 70%);
+    }
+    .cat-hero-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 5;
+      color: #fff;
+    }
+    .cat-hero-label h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .cat-hero-label span {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    @media (max-width: 900px) {
+      .cat-hero-strip { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .cat-hero-strip { grid-template-columns: repeat(2, 1fr); }
+      .cat-nav-item { padding: 12px 16px; font-size: 10px; }
+      .cat-nav-thumb { width: 28px; height: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="custom-cursor"></div>
+<div id="page-curtain"></div>
+
+<!-- ─── NAVEGAÇÃO ─── -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo" data-setting="site_name">Pietra Roza</a>
+  <ul class="nav-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html" class="active">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="mobile-menu-header"><span class="mobile-menu-logo" data-setting="site_name">Pietra Roza</span></div>
+  <ul class="mobile-menu-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html" class="active">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-accent"></div>
+  <div class="mobile-menu-footer">
+    <p>São Paulo · Uberaba<br>Brasil</p>
+    <a href="contato.html" class="mobile-menu-cta">Solicitar Orçamento</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ─── HEADER ─── -->
+  <div class="cat-header">
+    <p class="section-label reveal">Portfólio de Projetos</p>
+    <h1 class="section-title reveal" data-delay="0.05">Obras</h1>
+    <p style="margin-top: 24px; max-width: 520px; font-size: 15px; line-height: 1.7; color: var(--text-secondary);" class="reveal d-3">
+      Explore projetos autênticos de arquitetura e design. Do detalhe de uma bancada às escadarias monumentais, testemunhe a versatilidade de nossas pedras naturais e fabricadas aplicadas em ambientes reais.
+    </p>
+  </div>
+
+  <!-- ─── MINI CARDS DE CATEGORIA (HERO COMPACTO) ─── -->
+  <div class="cat-hero-strip">
+    <a href="#pisos" class="cat-hero-card reveal">
+      <div class="cat-hero-card-img"><img src="assets/img/portfolio/projetos-thumbnail.png" alt="Pisos"></div>
+      <div class="cat-hero-label"><h3>Pisos</h3></div>
+    </a>
+    <a href="#lareiras" class="cat-hero-card reveal" data-delay="0.05">
+      <div class="cat-hero-card-img"><img src="assets/img/portfolio/Rectangle-266.jpg" alt="Lareiras"></div>
+      <div class="cat-hero-label"><h3>Lareiras</h3></div>
+    </a>
+    <a href="#escadas" class="cat-hero-card reveal" data-delay="0.1">
+      <div class="cat-hero-card-img"><img src="assets/img/portfolio/nome-obra-4.jpg" alt="Escadas"></div>
+      <div class="cat-hero-label"><h3>Escadas</h3></div>
+    </a>
+    <a href="#cubas" class="cat-hero-card reveal" data-delay="0.15">
+      <div class="cat-hero-card-img"><img src="assets/img/portfolio/decoracao-thumbnail.png" alt="Cubas"></div>
+      <div class="cat-hero-label"><h3>Cubas e Lavabos</h3></div>
+    </a>
+    <a href="#churrasqueiras" class="cat-hero-card reveal" data-delay="0.2">
+      <div class="cat-hero-card-img"><img src="assets/img/portfolio/nome-obra-2.jpg" alt="Churrasqueiras"></div>
+      <div class="cat-hero-label"><h3>Churrasqueiras</h3></div>
+    </a>
+  </div>
+
+  <!-- ─── BARRA DE NAVEGAÇÃO STICKY ─── -->
+  <div class="cat-nav" id="catNav">
+    <div class="cat-nav-inner">
+      <a href="#pisos" class="cat-nav-item active" data-section="pisos">
+        <div class="cat-nav-thumb"><img src="assets/img/portfolio/projetos-thumbnail.png" alt=""></div>
+        Pisos e Revestimentos
+      </a>
+      <a href="#lareiras" class="cat-nav-item" data-section="lareiras">
+        <div class="cat-nav-thumb"><img src="assets/img/portfolio/Rectangle-266.jpg" alt=""></div>
+        Lareiras
+      </a>
+      <a href="#escadas" class="cat-nav-item" data-section="escadas">
+        <div class="cat-nav-thumb"><img src="assets/img/portfolio/nome-obra-4.jpg" alt=""></div>
+        Escadas
+      </a>
+      <a href="#cubas" class="cat-nav-item" data-section="cubas">
+        <div class="cat-nav-thumb"><img src="assets/img/portfolio/decoracao-thumbnail.png" alt=""></div>
+        Cubas e Lavabos
+      </a>
+      <a href="#churrasqueiras" class="cat-nav-item" data-section="churrasqueiras">
+        <div class="cat-nav-thumb"><img src="assets/img/portfolio/nome-obra-2.jpg" alt=""></div>
+        Churrasqueiras
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ─── SEÇÃO: PISOS ─── -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="collection-section" id="pisos">
+    <div class="collection-header reveal">
+      <h2>Pisos</h2>
+    </div>
+    <div class="products-grid" id="pisos-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: LAREIRAS ─── -->
+  <div class="collection-section" id="lareiras" style="background: var(--bg-light);">
+    <div class="collection-header reveal">
+      <h2>Lareiras</h2>
+    </div>
+    <div class="products-grid" id="lareiras-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: ESCADAS ─── -->
+  <div class="collection-section" id="escadas">
+    <div class="collection-header reveal">
+      <h2>Escadas</h2>
+    </div>
+    <div class="products-grid" id="escadas-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: CUBAS ─── -->
+  <div class="collection-section" id="cubas" style="background: var(--bg-light);">
+    <div class="collection-header reveal">
+      <h2>Cubas e Lavabos</h2>
+    </div>
+    <div class="products-grid" id="cubas-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: CHURRASQUEIRAS ─── -->
+  <div class="collection-section" id="churrasqueiras">
+    <div class="collection-header reveal">
+      <h2>Churrasqueiras e Gourmet</h2>
+    </div>
+    <div class="products-grid" id="churrasqueiras-grid"></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-title">Solicite seu<br>orçamento</h2>
+    <a href="contato.html" class="cta-link">Fale conosco →</a>
+  </section>
+
+</main>
+
+<!-- ─── MODAL DE DETALHE ─── -->
+<div class="stone-modal" id="stoneModal">
+  <div class="stone-modal-overlay" onclick="closeModal()"></div>
+  <div class="stone-modal-content">
+    <button class="stone-modal-close" onclick="closeModal()">✕</button>
+    <div class="stone-modal-img">
+      <img id="modalImg" src="" alt="">
+    </div>
+    <div class="stone-modal-info">
+      <p class="stone-modal-label" id="modalLabel">Pedra Natural</p>
+      <h2 class="stone-modal-name" id="modalName"></h2>
+      <p class="stone-modal-origin" id="modalOrigin"></p>
+      <p class="stone-modal-desc" id="modalDesc"></p>
+      <a href="contato.html" class="btn-terracota" style="margin-top: 32px;">Solicitar Orçamento</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo" data-setting="site_name">Pietra Roza</div>
+    <nav class="footer-nav">
+      <a href="material-category.html">Mármores</a>
+      <a href="portfolio.html">Projetos</a>
+      <a href="obras.html">Obras</a>
+      <a href="galeria.html">Coleções</a>
+      <a href="quem-somos.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Pietra Roza. Todos os direitos reservados.</p>
+    <p class="footer-copy">São Paulo · Uberaba, Brasil</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/obras-data.js"></script>
+<script>
+  // Sticky nav — highlight ativo ao scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.cat-nav-item[data-section]');
+    const sections = [];
+
+    navItems.forEach(item => {
+      const id = item.dataset.section;
+      const section = document.getElementById(id);
+      if (section) sections.push({ id, el: section, navItem: item });
+    });
+
+    if (typeof IntersectionObserver !== 'undefined' && sections.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navItems.forEach(n => n.classList.remove('active'));
+            const match = sections.find(s => s.el === entry.target);
+            if (match) match.navItem.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px' });
+
+      sections.forEach(s => observer.observe(s.el));
+    }
+  });
+</script>
+<script type="module" src="assets/js/settings.js"></script>
+</body>
+</html>
+
+

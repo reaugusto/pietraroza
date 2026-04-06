@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleções — Pedras Naturais e Fabricadas | Pietra Roza</title>
+  <meta name="description" content="Explore a coleção completa de pedras da Pietra Roza — mármores, granitos, ônix, quartzitos, travertinos e fabricados para projetos de alto padrão.">
+  <link rel="icon" href="assets/img/site/fav-icon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── BARRA DE CATEGORIAS STICKY ─── */
+    .cat-nav {
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 50;
+      background: rgba(232, 226, 217, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(29,27,22,0.06);
+      padding: 0 var(--gutter);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .cat-nav::-webkit-scrollbar { display: none; }
+    .cat-nav-inner {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      min-width: max-content;
+    }
+    .cat-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 24px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: all 0.3s var(--ease-out);
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      cursor: none;
+    }
+    .cat-nav-item:hover {
+      color: var(--text-primary);
+      background: rgba(181, 113, 74, 0.04);
+    }
+    .cat-nav-item.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--bg-card);
+    }
+    .cat-nav-thumb {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cat-nav-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cat-nav-count {
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      color: var(--bg-card);
+      opacity: 0.7;
+      margin-left: -6px;
+    }
+
+    /* ─── SEÇÕES DE COLEÇÃO ─── */
+    .collection-section {
+      padding: var(--section-v) var(--gutter);
+    }
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+    .collection-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      line-height: 0.95;
+    }
+    .collection-count {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    /* ─── HERO COMPACTO DE CATEGORIAS ─── */
+    .cat-hero-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+      margin-bottom: 0;
+    }
+    .cat-hero-card {
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      display: block;
+    }
+    .cat-hero-card-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+    }
+    .cat-hero-card-img img {
+      transition: transform 0.8s var(--ease-out);
+    }
+    .cat-hero-card:hover .cat-hero-card-img img {
+      transform: scale(1.08);
+    }
+    .cat-hero-card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(29,27,22,0.55) 0%, transparent 70%);
+    }
+    .cat-hero-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 5;
+      color: #fff;
+    }
+    .cat-hero-label h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .cat-hero-label span {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    @media (max-width: 900px) {
+      .cat-hero-strip { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .cat-hero-strip { grid-template-columns: repeat(2, 1fr); }
+      .cat-nav-item { padding: 12px 16px; font-size: 10px; }
+      .cat-nav-thumb { width: 28px; height: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="custom-cursor"></div>
+<div id="page-curtain"></div>
+
+<!-- ─── NAVEGAÇÃO ─── -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo" data-setting="site_name">Pietra Roza</a>
+  <ul class="nav-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html" class="active">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="mobile-menu-header"><span class="mobile-menu-logo" data-setting="site_name">Pietra Roza</span></div>
+  <ul class="mobile-menu-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html" class="active">Coleções</a></li>
+    <li><a href="quem-somos.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-accent"></div>
+  <div class="mobile-menu-footer">
+    <p>São Paulo · Uberaba<br>Brasil</p>
+    <a href="contato.html" class="mobile-menu-cta">Solicitar Orçamento</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ─── HEADER ─── -->
+  <div class="cat-header">
+    <p class="section-label reveal">Acervo Completo</p>
+    <h1 class="section-title reveal" data-delay="0.05">Coleções</h1>
+    <p style="margin-top: 24px; max-width: 520px; font-size: 15px; line-height: 1.7; color: var(--text-secondary);" class="reveal d-3">
+      Fornecemos pedras ornamentais diversas como mármores, granitos, limestones, quartzitos, fabricados em quartzo e lâminas sinterizadas e ultracompactas para serviços em obras ou para mobiliário de desenho exclusivo.
+    </p>
+  </div>
+
+  <!-- ─── MINI CARDS DE CATEGORIA (HERO COMPACTO) ─── -->
+  <div class="cat-hero-strip">
+    <a href="#marmores" class="cat-hero-card reveal">
+      <div class="cat-hero-card-img"><img src="assets/img/site/marmores.png" alt="Mármores"></div>
+      <div class="cat-hero-label"><h3>Mármores</h3><span>48 peças</span></div>
+    </a>
+    <a href="#granitos" class="cat-hero-card reveal" data-delay="0.05">
+      <div class="cat-hero-card-img"><img src="assets/img/site/granito.png" alt="Granitos"></div>
+      <div class="cat-hero-label"><h3>Granitos</h3><span>47 peças</span></div>
+    </a>
+    <a href="#onix" class="cat-hero-card reveal" data-delay="0.1">
+      <div class="cat-hero-card-img"><img src="assets/img/site/onix.png" alt="Ônix"></div>
+      <div class="cat-hero-label"><h3>Ônix</h3><span>20 peças</span></div>
+    </a>
+    <a href="#quartzitos" class="cat-hero-card reveal" data-delay="0.15">
+      <div class="cat-hero-card-img"><img src="assets/img/site/Rectangle-281.png" alt="Quartzitos"></div>
+      <div class="cat-hero-label"><h3>Quartzitos</h3><span>40 peças</span></div>
+    </a>
+    <a href="#travertinos" class="cat-hero-card reveal" data-delay="0.2">
+      <div class="cat-hero-card-img"><img src="assets/img/site/Rectangle-282.png" alt="Travertinos"></div>
+      <div class="cat-hero-label"><h3>Travertinos</h3><span>9 peças</span></div>
+    </a>
+    <a href="#fabricados" class="cat-hero-card reveal" data-delay="0.25">
+      <div class="cat-hero-card-img"><img src="assets/img/site/Rectangle-279.png" alt="Fabricados"></div>
+      <div class="cat-hero-label"><h3>Fabricados</h3><span>17 peças</span></div>
+    </a>
+  </div>
+
+  <!-- ─── BARRA DE NAVEGAÇÃO STICKY ─── -->
+  <div class="cat-nav" id="catNav">
+    <div class="cat-nav-inner">
+      <a href="#marmores" class="cat-nav-item" data-section="marmores">
+        <div class="cat-nav-thumb"><img src="assets/img/site/marmores.png" alt=""></div>
+        Mármores
+        <span class="cat-nav-count">48</span>
+      </a>
+      <a href="#granitos" class="cat-nav-item" data-section="granitos">
+        <div class="cat-nav-thumb"><img src="assets/img/site/granito.png" alt=""></div>
+        Granitos
+        <span class="cat-nav-count">47</span>
+      </a>
+      <a href="#onix" class="cat-nav-item" data-section="onix">
+        <div class="cat-nav-thumb"><img src="assets/img/site/onix.png" alt=""></div>
+        Ônix
+        <span class="cat-nav-count">20</span>
+      </a>
+      <a href="#quartzitos" class="cat-nav-item" data-section="quartzitos">
+        <div class="cat-nav-thumb"><img src="assets/img/site/Rectangle-281.png" alt=""></div>
+        Quartzitos
+        <span class="cat-nav-count">40</span>
+      </a>
+      <a href="#travertinos" class="cat-nav-item" data-section="travertinos">
+        <div class="cat-nav-thumb"><img src="assets/img/site/Rectangle-282.png" alt=""></div>
+        Travertinos
+        <span class="cat-nav-count">9</span>
+      </a>
+      <a href="#fabricados" class="cat-nav-item" data-section="fabricados">
+        <div class="cat-nav-thumb"><img src="assets/img/site/Rectangle-279.png" alt=""></div>
+        Fabricados
+        <span class="cat-nav-count">17</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ─── SEÇÃO: MÁRMORES ─── -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="collection-section" id="marmores" style="background: var(--bg-light);">
+    <div class="collection-header reveal">
+      <h2>Mármores</h2>
+      <span class="collection-count">48 peças</span>
+    </div>
+    <div class="products-grid" id="marmores-grid"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ─── SEÇÃO: GRANITOS ─── -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="collection-section" id="granitos">
+    <div class="collection-header reveal">
+      <h2>Granitos</h2>
+      <span class="collection-count">47 peças</span>
+    </div>
+    <div class="products-grid" id="granitos-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: ÔNIX ─── -->
+  <div class="collection-section" id="onix">
+    <div class="collection-header reveal">
+      <h2>Ônix</h2>
+      <span class="collection-count">20 peças</span>
+    </div>
+    <div class="products-grid" id="onix-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: QUARTZITOS ─── -->
+  <div class="collection-section" id="quartzitos" style="background: var(--bg-light);">
+    <div class="collection-header reveal">
+      <h2>Quartzitos</h2>
+      <span class="collection-count">40 peças</span>
+    </div>
+    <div class="products-grid" id="quartzitos-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: TRAVERTINOS ─── -->
+  <div class="collection-section" id="travertinos">
+    <div class="collection-header reveal">
+      <h2>Travertinos</h2>
+      <span class="collection-count">9 peças</span>
+    </div>
+    <div class="products-grid" id="travertinos-grid"></div>
+  </div>
+
+  <!-- ─── SEÇÃO: FABRICADOS ─── -->
+  <div class="collection-section" id="fabricados" style="background: var(--bg-light);">
+    <div class="collection-header reveal">
+      <h2>Fabricados</h2>
+      <span class="collection-count">17 peças</span>
+    </div>
+    <div class="products-grid" id="fabricados-grid"></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-title">Solicite seu<br>orçamento</h2>
+    <a href="contato.html" class="cta-link">Fale conosco →</a>
+  </section>
+
+</main>
+
+<!-- ─── MODAL DE DETALHE ─── -->
+<div class="stone-modal" id="stoneModal">
+  <div class="stone-modal-overlay" onclick="closeModal()"></div>
+  <div class="stone-modal-content">
+    <button class="stone-modal-close" onclick="closeModal()">✕</button>
+    <div class="stone-modal-img">
+      <img id="modalImg" src="" alt="">
+    </div>
+    <div class="stone-modal-info">
+      <p class="stone-modal-label" id="modalLabel">Pedra Natural</p>
+      <h2 class="stone-modal-name" id="modalName"></h2>
+      <p class="stone-modal-origin" id="modalOrigin"></p>
+      <p class="stone-modal-desc" id="modalDesc"></p>
+      <a href="contato.html" class="btn-terracota" style="margin-top: 32px;">Solicitar Orçamento</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo" data-setting="site_name">Pietra Roza</div>
+    <nav class="footer-nav">
+      <a href="material-category.html">Mármores</a>
+      <a href="portfolio.html">Projetos</a>
+      <a href="obras.html">Obras</a>
+      <a href="galeria.html">Coleções</a>
+      <a href="quem-somos.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Pietra Roza. Todos os direitos reservados.</p>
+    <p class="footer-copy">São Paulo · Uberaba, Brasil</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/galeria-data.js"></script>
+<script>
+  // Sticky nav — highlight ativo ao scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.cat-nav-item[data-section]');
+    const sections = [];
+
+    navItems.forEach(item => {
+      const id = item.dataset.section;
+      const section = document.getElementById(id);
+      if (section) sections.push({ id, el: section, navItem: item });
+    });
+
+    if (typeof IntersectionObserver !== 'undefined' && sections.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navItems.forEach(n => n.classList.remove('active'));
+            const match = sections.find(s => s.el === entry.target);
+            if (match) match.navItem.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px' });
+
+      sections.forEach(s => observer.observe(s.el));
+    }
+  });
+</script>
+<script type="module" src="assets/js/settings.js"></script>
+</body>
+</html>
+
+

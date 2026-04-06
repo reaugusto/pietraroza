@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre a Pietra Roza — A Curadoria da Matéria</title>
+  <meta name="description" content="Conheça a história e filosofia da Pietra Roza — curadoria de pedras naturais para projetos de arquitetura e design de luxo.">
+  <link rel="icon" href="assets/img/site/fav-icon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .manifesto-section {
+      padding: var(--section-v) var(--gutter);
+      max-width: 780px;
+    }
+    .manifesto-text {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 42px);
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .manifesto-text em {
+      font-style: italic;
+      color: var(--bg-card);
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 0;
+    }
+    .value-card {
+      background: var(--bg-light);
+      padding: 48px 40px;
+    }
+    .value-number {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bg-card);
+      margin-bottom: 20px;
+    }
+    .value-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .value-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .team-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--bg-base);
+    }
+    .team-img { aspect-ratio: 3/4; overflow: hidden; }
+    .team-bio {
+      padding: 60px 48px;
+      background: var(--bg-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .team-bio h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .team-bio .role {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bg-card);
+      margin-bottom: 24px;
+    }
+    .team-bio p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .stat-box {
+      background: var(--bg-card);
+      color: #fff;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+    .historia-section {
+      display: grid;
+      grid-template-columns: 1fr auto 1.5fr;
+      gap: 80px;
+      padding: var(--section-v) var(--gutter);
+      align-items: center;
+    }
+    .historia-logo {
+      width: 140px;
+      pointer-events: none;
+    }
+    .historia-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .historia-text p + p { margin-top: 16px; }
+    @media (max-width: 900px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .historia-section { grid-template-columns: 1fr; gap: 40px; }
+      .historia-logo { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="custom-cursor"></div>
+<div id="page-curtain"></div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo" data-setting="site_name">Pietra Roza</a>
+  <ul class="nav-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html" class="active">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu-overlay"></div>
+<div class="mobile-menu">
+  <div class="mobile-menu-header"><span class="mobile-menu-logo" data-setting="site_name">Pietra Roza</span></div>
+  <ul class="mobile-menu-links">
+    <li><a href="material-category.html">Mármores</a></li>
+    <li><a href="portfolio.html">Projetos</a></li>
+    <li><a href="obras.html">Obras</a></li>
+    <li><a href="galeria.html">Coleções</a></li>
+    <li><a href="quem-somos.html" class="active">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-accent"></div>
+  <div class="mobile-menu-footer">
+    <p>São Paulo · Uberaba<br>Brasil</p>
+    <a href="contato.html" class="mobile-menu-cta">Solicitar Orçamento</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- Header -->
+  <div class="cat-header">
+    <p class="section-label reveal">Nossa História</p>
+    <h1 class="section-title reveal" data-delay="0.05">Sobre</h1>
+  </div>
+
+  <!-- Manifesto -->
+  <div class="manifesto-section">
+    <p class="manifesto-text reveal">
+      Acreditamos que cada pedra carrega
+      <em>a assinatura do tempo</em>. Nosso trabalho é
+      encontrar essa matéria única e levá-la
+      aos projetos que merecem.
+    </p>
+  </div>
+
+
+
+  <!-- História -->
+  <div class="historia-section">
+    <div class="reveal">
+      <h2 class="editorial-headline">A Nossa<br>História</h2>
+    </div>
+    
+    <div class="reveal d-1" style="display:flex; justify-content:center;">
+      <img src="assets/img/site/fav-icon.png" alt="Pietra Roza Logo" class="historia-logo">
+    </div>
+
+    <div class="reveal d-2">
+      <div class="historia-text" data-setting="about_text" style="white-space: pre-line;">
+        <p>A Pietra Roza nasceu da vontade de ser referência no mercado de marmorarias, com amplo investimento na qualidade dos materiais, instalação e atendimento. O nosso estoque conta com grande quantidade de mármores, granitos, materiais exóticos e fabricados para melhor atender a qualquer projeto.</p>
+        <p>Da junção das marcas Dimarmo Mármores e Granitos e Petra Design Mármores e Interiores, nasceu a Pietra Roza Mármores e Revestimentos, empresa destaque na área de pedras naturais e fabricadas. Atuamos no setor há mais de 25 anos com equipe qualificada, de confiança e treinada para sempre atender às necessidades dos clientes com o melhor do design.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Valores -->
+  <div class="section">
+    <p class="section-label reveal">Nossa Filosofia</p>
+    <h2 class="section-title reveal" data-delay="0.05" style="margin-bottom: 64px;">Princípios</h2>
+  </div>
+
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <p class="value-number">01</p>
+      <h3 class="value-title">Origem Certificada</h3>
+      <p class="value-text">Trabalhamos apenas com pedreiras de extração sustentável e cadeia produtiva rastreável. Cada chapa tem procedência documentada.</p>
+    </div>
+    <div class="value-card reveal d-1">
+      <p class="value-number">02</p>
+      <h3 class="value-title">Curadoria Rigorosa</h3>
+      <p class="value-text">Menos de 15% das chapas vistas em visitas às pedreiras são selecionadas para o nosso acervo. Qualidade acima de quantidade.</p>
+    </div>
+    <div class="value-card reveal d-2">
+      <p class="value-number">03</p>
+      <h3 class="value-title">Assessoria Técnica</h3>
+      <p class="value-text">Acompanhamos o projeto desde a escolha da pedra até a aplicação final, garantindo que a visão do arquiteto se materialize sem compromissos.</p>
+    </div>
+  </div>
+
+  <!-- Sobre Sections -->
+  <div class="values-grid" style="margin-top: 2px;">
+    <div class="value-card reveal">
+      <p class="value-number">Maquinários</p>
+      <h3 class="value-title">Tecnologia</h3>
+      <p class="value-text">Investimos em tecnologia e inovação com maquinário de última geração para aprimorar nossos processos produtivos e garantir resultados com maior precisão.</p>
+    </div>
+    <div class="value-card reveal d-1">
+      <p class="value-number">Sustentabilidade</p>
+      <h3 class="value-title">Compromisso</h3>
+      <p class="value-text">Temos compromisso com a natureza buscando práticas responsáveis em nossas operações, desde a seleção de fornecedores sustentáveis até a adoção de medidas de reaproveitamento.</p>
+    </div>
+    <div class="value-card reveal d-2">
+      <p class="value-number">Equipe</p>
+      <h3 class="value-title">Excelência</h3>
+      <p class="value-text">Nossa equipe é qualificada para ter um ótimo atendimento, compreensão dos projetos dos profissionais de construção e estar sempre atenta às novidades do mercado.</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row" style="margin-top: 2px;">
+    <div class="stat-box reveal">
+      <p class="stat-number">+25</p>
+      <p class="stat-label">Anos de mercado</p>
+    </div>
+    <div class="stat-box reveal d-1">
+      <p class="stat-number">500+</p>
+      <p class="stat-label">Projetos entregues</p>
+    </div>
+    <div class="stat-box reveal d-2">
+      <p class="stat-number">20+</p>
+      <p class="stat-label">Países de origem</p>
+    </div>
+    <div class="stat-box reveal d-3">
+      <p class="stat-number">100%</p>
+      <p class="stat-label">Rastreabilidade</p>
+    </div>
+  </div>
+
+  <!-- Locais -->
+  <div class="historia-section">
+    <div class="reveal">
+      <h2 class="editorial-headline">Nossos<br>Locais</h2>
+    </div>
+    <div class="reveal d-2">
+      <div class="historia-text">
+        <p><strong>São Paulo — SP</strong><br>Showroom e atendimento para a região Sudeste.</p>
+        <p><strong>Uberaba — MG</strong><br>Sede das operações: produção e estoque.</p>
+      </div>
+      <div style="display:flex; gap:16px; margin-top: 24px;">
+        <a href="https://maps.app.goo.gl/D168wQVcnMtDCJQ29" target="_blank" rel="noopener" class="btn-outline">São Paulo →</a>
+        <a href="https://maps.app.goo.gl/iJTmpzG1S9TdFRRNA" target="_blank" rel="noopener" class="btn-outline">Uberaba →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-title">Pronto para<br>o próximo passo?</h2>
+    <a href="contato.html" class="cta-link">Fale conosco →</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo" data-setting="site_name">Pietra Roza</div>
+    <nav class="footer-nav">
+      <a href="material-category.html">Mármores</a>
+      <a href="portfolio.html">Projetos</a>
+      <a href="obras.html">Obras</a>
+      <a href="galeria.html">Coleções</a>
+      <a href="quem-somos.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 <span data-setting="site_name">Pietra Roza</span>. <span data-setting="footer_text">Todos os direitos reservados.</span></p>
+    <p class="footer-copy" data-setting="address">São Paulo · Uberaba, Brasil</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/settings.js"></script>
+</body>
+</html>
+
