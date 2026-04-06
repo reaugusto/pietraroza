@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Pietra Roza CMS</title>
+    <link rel="stylesheet" href="assets/css/cms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body" style="display: none;">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Pietra Roza</h1>
+            <span>CMS Panel</span>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-section-title">Conteúdo Principal</li>
+                <li><a href="#" class="nav-link active" data-target="materials-panel">Materiais (Galeria)</a></li>
+                <li><a href="#" class="nav-link" data-target="works-panel">Portfólio (Obras)</a></li>
+                <li class="nav-section-title">Gerenciamento</li>
+                <li><a href="#" class="nav-link" data-target="mat-cat-panel">Categorias de Materiais</a></li>
+                <li><a href="#" class="nav-link" data-target="work-cat-panel">Categorias de Obras</a></li>
+                <li class="nav-section-title">Global</li>
+                <li><a href="#" class="nav-link" data-target="settings-panel">Configurações Gerais</a></li>
+                <li><a href="#" class="nav-link" data-target="leads-panel">Leads (Contatos)</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <span class="logout-btn" id="logout-btn">Sair do Sistema</span>
+        </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="main-content">
+        <header class="topbar">
+            <div id="loading-indicator" style="display: none; color: var(--text-light); font-size: 14px;">Carregando dados...</div>
+            <div class="user-info">Administrador</div>
+        </header>
+        
+        <div class="content-area">
+            
+            <!-- MATERIALS PANEL -->
+            <section id="materials-panel" class="panel active">
+                <div class="panel-header">
+                    <h2>Catálogo de Materiais</h2>
+                    <button class="btn btn-primary" onclick="openModal('material-modal')">Novo Material</button>
+                </div>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="materials-tbody">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- WORKS PANEL -->
+            <section id="works-panel" class="panel">
+                <div class="panel-header">
+                    <h2>Portfólio de Obras</h2>
+                    <button class="btn btn-primary" onclick="openModal('work-modal')">Nova Obra</button>
+                </div>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Imagem Base</th>
+                                <th>Título</th>
+                                <th>Categoria</th>
+                                <th>Destacado</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="works-tbody">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- LEADS PANEL -->
+            <section id="leads-panel" class="panel">
+                <div class="panel-header">
+                    <h2>Caixa de Entrada (Leads)</h2>
+                </div>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-tbody">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+        
+            <!-- MAT CAT PANEL -->
+            <section id="mat-cat-panel" class="panel">
+                <div class="panel-header">
+                    <h2>Categorias de Materiais</h2>
+                    <button class="btn btn-primary" onclick="openModal('mat-cat-modal')">Nova Categoria</button>
+                </div>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nome (Label)</th>
+                                <th>Slug</th>
+                                <th>Ordem</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mat-cat-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- WORK CAT PANEL -->
+            <section id="work-cat-panel" class="panel">
+                <div class="panel-header">
+                    <h2>Categorias de Obras</h2>
+                    <button class="btn btn-primary" onclick="openModal('work-cat-modal')">Nova Categoria</button>
+                </div>
+                <div class="data-table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nome (Label)</th>
+                                <th>Slug</th>
+                                <th>Ordem</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="work-cat-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SETTINGS PANEL -->
+            <section id="settings-panel" class="panel">
+                <div class="panel-header">
+                    <h2>Configurações Gerais & E-mail</h2>
+                    <button class="btn btn-primary" id="save-settings-btn">Salvar Configurações</button>
+                </div>
+                <div class="settings-form" style="max-width: 800px; margin: 20px 0;">
+                    <form id="settings-form">
+                        <h3>Website Global</h3>
+                        <div class="input-group">
+                            <label>Nome do Site</label>
+                            <input type="text" id="set-site-name">
+                        </div>
+                        <div class="input-group">
+                            <label>Endereço Físico</label>
+                            <input type="text" id="set-address">
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone Principal</label>
+                            <input type="text" id="set-phone">
+                        </div>
+                        <div class="input-group">
+                            <label>E-mail de Contato Principal</label>
+                            <input type="email" id="set-contact-email">
+                        </div>
+                        
+                        <h3 style="margin-top:30px;">Textos Institucionais</h3>
+                        <div class="input-group">
+                            <label>H1 Principal (Hero Title)</label>
+                            <input type="text" id="set-hero-title">
+                        </div>
+                        <div class="input-group">
+                            <label>Subtítulo (Hero Subtitle)</label>
+                            <input type="text" id="set-hero-subtitle">
+                        </div>
+                        <div class="input-group">
+                            <label>Texto "Sobre Nós" / Quem Somos</label>
+                            <textarea id="set-about-text" rows="5" style="width: 100%; border: 1px solid var(--border-color); border-radius: 4px; padding: 12px; font-family: inherit; font-size: 14px;"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Texto do Rodapé (Footer Text)</label>
+                            <input type="text" id="set-footer-text">
+                        </div>
+                        
+                        <h3 style="margin-top:30px;">SMTP (Disparo de E-mails)</h3>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="input-group">
+                                <label>SMTP Host</label>
+                                <input type="text" id="set-smtp-host" placeholder="ex: smtp.seusite.com.br">
+                            </div>
+                            <div class="input-group">
+                                <label>SMTP Port</label>
+                                <input type="number" id="set-smtp-port" placeholder="ex: 465">
+                            </div>
+                            <div class="input-group">
+                                <label>SMTP Usuário</label>
+                                <input type="text" id="set-smtp-user">
+                            </div>
+                            <div class="input-group">
+                                <label>SMTP Senha</label>
+                                <input type="password" id="set-smtp-pass">
+                            </div>
+                            <div class="input-group">
+                                <label>E-mail de Destino (Receber Alertas)</label>
+                                <input type="email" id="set-target-email">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- MATERIAL MODAL -->
+    <div class="modal-overlay" id="material-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="material-modal-title">Cadastrar Material</h3>
+                <button class="close-modal" onclick="closeModal('material-modal')">&times;</button>
+            </div>
+            <form id="material-form">
+                <input type="hidden" id="material-id">
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label for="material-name">Nome da Pedra</label>
+                        <input type="text" id="material-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="material-category">Categoria</label>
+                        <select id="material-category" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
+                            <!-- Populated via JS -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="material-description">Descrição do Material</label>
+                        <textarea id="material-description" rows="4" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="material-image">Upload de Imagem</label>
+                        <input type="file" id="material-image" accept="image/*">
+                        <p style="font-size: 12px; color: var(--text-light); margin-top: 5px;">A imagem atual será mantida se nenhuma nova for enviada.</p>
+                        <input type="hidden" id="material-image-url">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('material-modal')">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="material-save-btn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- WORK MODAL -->
+    <div class="modal-overlay" id="work-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="work-modal-title">Cadastrar Obra</h3>
+                <button class="close-modal" onclick="closeModal('work-modal')">&times;</button>
+            </div>
+            <form id="work-form">
+                <input type="hidden" id="work-id">
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label for="work-title">Nome do Projeto/Obra</label>
+                        <input type="text" id="work-title" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="work-category">Tipo de Obra</label>
+                        <select id="work-category" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
+                            <!-- Populated via JS -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="work-description">Descrição da Obra</label>
+                        <textarea id="work-description" rows="4" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+                    </div>
+                    <div class="input-group" style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+                        <input type="checkbox" id="work-featured" style="width: auto;">
+                        <label for="work-featured" style="margin-bottom: 0;">Destacar Obra</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="work-image">Imagem Principal</label>
+                        <input type="file" id="work-image" accept="image/*">
+                        <input type="hidden" id="work-image-url">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('work-modal')">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="work-save-btn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MATERIAL CATEGORY MODAL -->
+    <div class="modal-overlay" id="mat-cat-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="mat-cat-modal-title">Cadastrar Categoria de Material</h3>
+                <button class="close-modal" onclick="closeModal('mat-cat-modal')">&times;</button>
+            </div>
+            <form id="mat-cat-form">
+                <input type="hidden" id="mat-cat-id">
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label for="mat-cat-label">Nome (Visível no site)</label>
+                        <input type="text" id="mat-cat-label" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="mat-cat-slug">Slug (URL amigável)</label>
+                        <input type="text" id="mat-cat-slug" required placeholder="ex: marmore-nacional">
+                    </div>
+                    <div class="input-group">
+                        <label for="mat-cat-order">Ordem de Exibição</label>
+                        <input type="number" id="mat-cat-order" value="0">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('mat-cat-modal')">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="mat-cat-save-btn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- WORKS CATEGORY MODAL -->
+    <div class="modal-overlay" id="work-cat-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="work-cat-modal-title">Cadastrar Categoria de Obra</h3>
+                <button class="close-modal" onclick="closeModal('work-cat-modal')">&times;</button>
+            </div>
+            <form id="work-cat-form">
+                <input type="hidden" id="work-cat-id">
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label for="work-cat-label">Nome (Visível no site)</label>
+                        <input type="text" id="work-cat-label" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="work-cat-slug">Slug (URL amigável)</label>
+                        <input type="text" id="work-cat-slug" required placeholder="ex: area-gourmet">
+                    </div>
+                    <div class="input-group">
+                        <label for="work-cat-order">Ordem de Exibição</label>
+                        <input type="number" id="work-cat-order" value="0">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('work-cat-modal')">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="work-cat-save-btn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/dashboard.js"></script>
+    <script>
+        // Funções UI basicas 
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            // reset form if inside this modal
+            const form = document.querySelector(`#${id} form`);
+            if (form) form.reset();
+        }
+    </script>
+</body>
+</html>
